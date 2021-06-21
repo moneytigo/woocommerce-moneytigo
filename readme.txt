@@ -2,9 +2,9 @@
 Contributors: moneytigo
 Tags: payment,payments, checkout,payment pro,merchant account,contrat vad,moyen de paiement,card,credit card,paiement,bezahlsystem,purchase,online payment,ipspayment,ips payment,moneytigo
 Requires at least: 4.1
-Tested up to: 5.5
+Tested up to: 5.7
 Requires PHP: 7.0
-Stable tag: 1.0.3
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,14 @@ C'est terminé !
 It's finish!
 
 == Changelog ==
+
+= 1.0.5 =
+* Added 2 and 4 times payment methods
+
+= 1.0.4 =
+* Removal of the integrated mode and change of api version
+* Standardization of the module with the latest security rules
+* Optimization of processing and response times
 
 = 1.0.3 =
 * Choice between integrated mode and redirection mode

@@ -253,12 +253,6 @@ public function init_form_fields() {
   $this->form_fields = array(
     'enabled' => array(
       'title' => __( 'Enable / Disable', 'moneytigo_woocommerce' ),
-      'type' => 'text',
-      'label' => __( 'Activate card payment with MoneyTigo', 'moneytigo_woocommerce' ),
-
-    ),
-    'enabled' => array(
-      'title' => __( 'Enable / Disable', 'moneytigo_woocommerce' ),
       'type' => 'checkbox',
       'label' => __( 'Activate card payment with MoneyTigo', 'moneytigo_woocommerce' ),
       'default' => 'no'

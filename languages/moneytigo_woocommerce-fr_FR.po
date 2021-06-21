@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MoneyTigo\n"
-"POT-Creation-Date: 2021-05-06 15:30+0200\n"
-"PO-Revision-Date: 2021-05-06 15:33+0200\n"
+"POT-Creation-Date: 2021-06-21 12:09+0200\n"
+"PO-Revision-Date: 2021-06-21 12:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -22,11 +22,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #. Plugin Name of the plugin/theme
-#: class-wc-moneytigo.php:14
+#: class-wc-moneytigo.php:22
 msgid "MoneyTigo"
 msgstr "MoneyTigo"
 
-#: class-wc-moneytigo.php:26
+#: class-wc-moneytigo.php:28
 msgid ""
 "Accept credit cards in less than 5 minutes. <a href=\"https://app.moneytigo."
 "com/user/register\">Open an account now !</a>"
@@ -34,15 +34,18 @@ msgstr ""
 "Acceptez les cartes bancaire en moins de 5 minutes. <a href=\"https://app."
 "moneytigo.com/user/register\">Ouvrez un compte dès maintenant !</a>"
 
-#: class-wc-moneytigo.php:57 class-wc-moneytigopnf.php:55
+#: class-wc-moneytigo.php:49 class-wc-moneytigopnf-four.php:41
+#: class-wc-moneytigopnf-three.php:41 class-wc-moneytigopnf-two.php:41
 msgid "MoneyTigo configuration"
 msgstr "Configuration MoneyTigo"
 
-#: class-wc-moneytigo.php:60 class-wc-moneytigopnf.php:58
+#: class-wc-moneytigo.php:52 class-wc-moneytigopnf-four.php:44
+#: class-wc-moneytigopnf-three.php:44 class-wc-moneytigopnf-two.php:44
 msgid "Accepts payments by credit card with MoneyTigo"
 msgstr "Acceptez les paiements par carte bancaire avec MoneyTigo"
 
-#: class-wc-moneytigo.php:61 class-wc-moneytigopnf.php:59
+#: class-wc-moneytigo.php:53 class-wc-moneytigopnf-four.php:45
+#: class-wc-moneytigopnf-three.php:45 class-wc-moneytigopnf-two.php:45
 msgid ""
 "MoneyTigo is a secure payment solution on the Internet. As a virtual POS "
 "(Electronic Payment Terminal), MoneyTigo makes it possible to cash payments "
@@ -54,28 +57,34 @@ msgstr ""
 "permet d’encaisser les paiements effectués sur Internet 24 heures sur 24, 7 "
 "jours sur 7. "
 
-#: class-wc-moneytigo.php:62 class-wc-moneytigopnf.php:60
+#: class-wc-moneytigo.php:54 class-wc-moneytigopnf-four.php:46
+#: class-wc-moneytigopnf-three.php:46 class-wc-moneytigopnf-two.php:46
 msgid "For any problem or information contact: hello@moneytigo.com"
 msgstr "Pour tout problème ou demande d’information : hello@moneytigo.com"
 
-#: class-wc-moneytigo.php:63 class-wc-moneytigopnf.php:62
+#: class-wc-moneytigo.php:55 class-wc-moneytigopnf-four.php:47
+#: class-wc-moneytigopnf-three.php:47 class-wc-moneytigopnf-two.php:47
 msgid "Get a MoneyTigo account"
 msgstr "Obtenez un compte MoneyTigo"
 
-#: class-wc-moneytigo.php:63 class-wc-moneytigopnf.php:62
+#: class-wc-moneytigo.php:55 class-wc-moneytigopnf-four.php:47
+#: class-wc-moneytigopnf-three.php:47 class-wc-moneytigopnf-two.php:47
 msgid "Test free"
 msgstr "Test gratuit"
 
-#: class-wc-moneytigo.php:63 class-wc-moneytigopnf.php:62
+#: class-wc-moneytigo.php:55 class-wc-moneytigopnf-four.php:47
+#: class-wc-moneytigopnf-three.php:47 class-wc-moneytigopnf-two.php:47
 msgid "Official site"
 msgstr "Site officiel"
 
-#: class-wc-moneytigo.php:63 class-wc-moneytigopnf.php:62
-#: woocommerce-moneytigo.php:41
+#: class-wc-moneytigo.php:55 class-wc-moneytigopnf-four.php:47
+#: class-wc-moneytigopnf-three.php:47 class-wc-moneytigopnf-two.php:47
+#: woocommerce-moneytigo.php:73
 msgid "Documentation"
 msgstr "Documentation"
 
-#: class-wc-moneytigo.php:67 class-wc-moneytigopnf.php:67
+#: class-wc-moneytigo.php:58 class-wc-moneytigopnf-four.php:50
+#: class-wc-moneytigopnf-three.php:50 class-wc-moneytigopnf-two.php:50
 msgid ""
 "If you want your customer to be automatically redirected to your site once "
 "the payment is accepted or failed, consider activating this option directly "
@@ -86,129 +95,168 @@ msgstr ""
 "directement dans la configuration de votre site Web dans votre Tableau de "
 "bord MoneyTigo"
 
-#: class-wc-moneytigo.php:106 class-wc-moneytigopnf.php:104
-msgid "Sorry, your payment was declined !"
-msgstr "Désolé, votre paiement est refusé !"
-
-#: class-wc-moneytigo.php:169 class-wc-moneytigo.php:180
-#: class-wc-moneytigopnf.php:171 class-wc-moneytigopnf.php:182
+#: class-wc-moneytigo.php:143
 msgid "MoneyTigo - Transaction "
 msgstr "MoneyTigo - Transaction "
 
-#: class-wc-moneytigo.php:198 class-wc-moneytigo.php:204
-#: class-wc-moneytigopnf.php:202
+#: class-wc-moneytigo.php:195
+msgid "An internal error occurred"
+msgstr "Une erreur interne s’est produite"
+
+#: class-wc-moneytigo.php:217
+msgid "Please wait a few moments ..."
+msgstr "Merci de patienter ..."
+
+#: class-wc-moneytigo.php:224 class-wc-moneytigo.php:237
+msgid "Sorry, your payment was declined !"
+msgstr "Désolé, votre paiement est refusé !"
+
+#: class-wc-moneytigo.php:255 class-wc-moneytigopnf-four.php:66
+#: class-wc-moneytigopnf-three.php:66 class-wc-moneytigopnf-two.php:66
 msgid "Enable / Disable"
 msgstr "Activer / Désactiver"
 
-#: class-wc-moneytigo.php:200 class-wc-moneytigo.php:206
+#: class-wc-moneytigo.php:257
 msgid "Activate card payment with MoneyTigo"
 msgstr "Activer le paiement par carte avec MoneyTigo"
 
-#: class-wc-moneytigo.php:210
-msgid "Active iframe integration"
-msgstr "Mode intégré (insite)"
-
-#: class-wc-moneytigo.php:212
-msgid "Activate the integrated mode"
-msgstr "J'active le mode intégré"
-
-#: class-wc-moneytigo.php:214
-msgid ""
-"If this option is checked in this case your customer will make his payment "
-"directly on your website, otherwise the customer will be redirected to the "
-"secure payment page MoneyTigo.<br><b>Remember to activate the integrated "
-"mode in the configuration of your contract on your MoneyTigo dashboard</b>"
-msgstr ""
-"Si cette option est cochée dans ce cas, votre client effectuera son paiement "
-"directement sur votre site Web, sinon le client sera redirigé vers la page "
-"de paiement sécurisée MoneyTigo."
-
-#: class-wc-moneytigo.php:217 class-wc-moneytigopnf.php:208
+#: class-wc-moneytigo.php:261 class-wc-moneytigopnf-four.php:79
+#: class-wc-moneytigopnf-three.php:79 class-wc-moneytigopnf-two.php:79
 msgid "Method title"
 msgstr "Nom de la méthode"
 
-#: class-wc-moneytigo.php:219 class-wc-moneytigopnf.php:210
+#: class-wc-moneytigo.php:263 class-wc-moneytigopnf-four.php:81
+#: class-wc-moneytigopnf-three.php:81 class-wc-moneytigopnf-two.php:81
 msgid "This is the name displayed on your checkout"
 msgstr "Ce nom sera affiché sur la page de commande"
 
-#: class-wc-moneytigo.php:221
+#: class-wc-moneytigo.php:265
 msgid "Credit card payment"
 msgstr "Carte bancaire"
 
-#: class-wc-moneytigo.php:224 class-wc-moneytigopnf.php:215
+#: class-wc-moneytigo.php:268 class-wc-moneytigopnf-four.php:86
+#: class-wc-moneytigopnf-three.php:86 class-wc-moneytigopnf-two.php:86
 msgid "Message before payment"
 msgstr "Message avant paiement"
 
-#: class-wc-moneytigo.php:226 class-wc-moneytigopnf.php:217
+#: class-wc-moneytigo.php:270 class-wc-moneytigopnf-four.php:88
+#: class-wc-moneytigopnf-three.php:88 class-wc-moneytigopnf-two.php:88
 msgid "Message that the customer sees when he chooses this payment method"
 msgstr "Ce message sera affiché, quand le client sélectionne MoneyTigo"
 
-#: class-wc-moneytigo.php:228 class-wc-moneytigopnf.php:219
+#: class-wc-moneytigo.php:272 class-wc-moneytigopnf-four.php:90
+#: class-wc-moneytigopnf-three.php:90 class-wc-moneytigopnf-two.php:90
 msgid "You will be redirected to our secure server to make your payment"
 msgstr ""
 "Vous serez redirigé vers notre serveur sécurisé pour effectuer votre paiement"
 
-#: class-wc-moneytigo.php:231 class-wc-moneytigopnf.php:222
+#: class-wc-moneytigo.php:275
 msgid "Your API Key"
 msgstr "Votre clé API (Api Key)"
 
-#: class-wc-moneytigo.php:232 class-wc-moneytigo.php:237
-#: class-wc-moneytigopnf.php:223 class-wc-moneytigopnf.php:228
+#: class-wc-moneytigo.php:276 class-wc-moneytigo.php:281
 msgid ""
 "To obtain it go to the configuration of your merchant contract (section "
 "\"Merchant account\")."
 msgstr ""
 "Pour l'obtenir rendez-vous dans la configuration de votre contrat (rubrique "
-"\"Contrat VAD\")."
+"\"Mes sites web\")."
 
-#: class-wc-moneytigo.php:236 class-wc-moneytigopnf.php:227
+#: class-wc-moneytigo.php:280
 msgid "Your Secret Key"
 msgstr "Votre clé secrète (SecretKey)"
 
-#: class-wc-moneytigo.php:275
-msgid "One moment please we redirect you to our secure payment server"
-msgstr ""
-"Un moment s’il vous plaît nous vous redirigeons vers notre serveur de "
-"paiement sécurisé"
+#: class-wc-moneytigo.php:354 class-wc-moneytigo.php:357
+#: class-wc-moneytigopnf-four.php:150 class-wc-moneytigopnf-four.php:153
+#: class-wc-moneytigopnf-three.php:150 class-wc-moneytigopnf-three.php:153
+#: class-wc-moneytigopnf-two.php:150 class-wc-moneytigopnf-two.php:153
+msgid "MoneyTigo : "
+msgstr "MoneyTigo :"
 
-#: class-wc-moneytigo.php:278 class-wc-moneytigopnf.php:276
-msgid "Click on this button if the redirection does not work"
-msgstr "Cliquez sur ce bouton si la redirection ne fonctionne pas"
+#: class-wc-moneytigopnf-four.php:20
+msgid "MoneyTigo - Payment in four instalments"
+msgstr "MoneyTigo - Paiement en quatre fois"
 
-#: class-wc-moneytigopnf.php:16
-msgid "MoneyTigo - 3X"
-msgstr "MoneyTigo - 3X"
-
-#: class-wc-moneytigopnf.php:28
+#: class-wc-moneytigopnf-four.php:25
 msgid ""
-"Accept credit cards in installments in less than 5 minutes. <a href="
-"\"https://app.moneytigo.com/user/register\">Open an account now !</a>"
+"Accept payment in four instalments! <a href=\"https://app.moneytigo.com/user/"
+"register\">Open an account now !</a>"
 msgstr ""
-"Acceptez les cartes bancaire en 3 fois en moins de 5 minutes. <a href="
-"\"https://app.moneytigo.com/user/register\">Ouvrez un compte dès maintenant !"
-"</a>"
+"Acceptez le paiement en quatre fois! <a href=\"https://app.moneytigo.com/"
+"user/register\">Ouvrez un compte maintenant !</a>"
 
-#: class-wc-moneytigopnf.php:204
-msgid "Activate payment in installments with MoneyTigo (3x)"
-msgstr "Activer le paiement en 3 fois avec MoneyTigo (3x)"
+#: class-wc-moneytigopnf-four.php:68
+msgid "Activate payment in four instalments"
+msgstr "Activer le paiement en quatre fois"
 
-#: class-wc-moneytigopnf.php:212
-msgid "Credit card in 3 installments"
-msgstr "Carte bancaire en 3 fois (3x)"
+#: class-wc-moneytigopnf-four.php:72 class-wc-moneytigopnf-three.php:72
+#: class-wc-moneytigopnf-two.php:72
+msgid "Minimum amount"
+msgstr "Montant minimum"
 
-#: class-wc-moneytigopnf.php:232
-msgid "Minimum amount for payment in 3 times (Minimum 100 €)"
-msgstr "Montant minimum pour un paiement en 3 fois (Minimum 100 €)"
-
-#: class-wc-moneytigopnf.php:273
+#: class-wc-moneytigopnf-four.php:74 class-wc-moneytigopnf-three.php:74
+#: class-wc-moneytigopnf-two.php:74
 msgid ""
-"One moment please, we redirect you to our secure payment partner for your "
-"payment in installments."
+"Indicate the minimum amount of the cart to be able to use this payment "
+"method (Minimum 50 EUR)"
 msgstr ""
-"Un moment s’il vous plaît, nous vous redirigeons vers notre partenaire de "
-"paiement sécurisé pour votre paiement en plusieurs fois."
+"Indiquez le montant minimum du panier pour pouvoir utiliser ce mode de "
+"paiement (Minimum 50 EUR)"
 
-#: woocommerce-moneytigo.php:30
+#: class-wc-moneytigopnf-four.php:75 class-wc-moneytigopnf-three.php:75
+#: class-wc-moneytigopnf-two.php:75
+msgid ""
+"Define from which amount you want your customer to be able to use this "
+"payment method."
+msgstr ""
+"Définissez le montant à partir duquel vous souhaitez que votre client puisse "
+"utiliser ce mode de paiement."
+
+#: class-wc-moneytigopnf-four.php:83
+msgid "Credit card in four instalments"
+msgstr "Carte bancaire en quatre fois"
+
+#: class-wc-moneytigopnf-three.php:20
+msgid "MoneyTigo - Payment in three instalments"
+msgstr "MoneyTigo - Paiement en trois fois"
+
+#: class-wc-moneytigopnf-three.php:25
+msgid ""
+"Accept payment in three instalments! <a href=\"https://app.moneytigo.com/"
+"user/register\">Open an account now !</a>"
+msgstr ""
+"Acceptez le paiement en trois fois! <a href=\"https://app.moneytigo.com/user/"
+"register\">Ouvrez un compte maintenant !</a>"
+
+#: class-wc-moneytigopnf-three.php:68
+msgid "Activate payment in three instalments"
+msgstr "Activer le paiement en trois fois"
+
+#: class-wc-moneytigopnf-three.php:83
+msgid "Credit card in three instalments"
+msgstr "Carte bancaire en 3 fois"
+
+#: class-wc-moneytigopnf-two.php:20
+msgid "MoneyTigo - Payment in two instalments"
+msgstr "MoneyTigo - Paiement en deux fois"
+
+#: class-wc-moneytigopnf-two.php:25
+msgid ""
+"Accept payment in two instalments! <a href=\"https://app.moneytigo.com/user/"
+"register\">Open an account now !</a>"
+msgstr ""
+"Acceptez le paiement en deux fois! <a href=\"https://app.moneytigo.com/user/"
+"register\">Ouvrez un compte maintenant !</a>"
+
+#: class-wc-moneytigopnf-two.php:68
+msgid "Activate payment in two instalments"
+msgstr "Activer le paiement en deux fois"
+
+#: class-wc-moneytigopnf-two.php:83
+msgid "Credit card in two instalments"
+msgstr "Carte bancaire en deux fois"
+
+#: woocommerce-moneytigo.php:62
 msgid ""
 "We inform you that a new version of the plugin is available, You must "
 "perform the update within the next 48 working hours"
@@ -216,21 +264,22 @@ msgstr ""
 "Nous vous informons qu’une nouvelle version du plugin est disponible, Vous "
 "devez effectuer la mise à jour dans les prochaines 48 heures ouvrables"
 
-#: woocommerce-moneytigo.php:49
-msgid "Secure payment by MoneyTigo ™"
-msgstr "Paiement sécurisé par MoneyTigo ™"
+#: woocommerce-moneytigo.php:81
+msgid "Payment solution for WooCommerce Moneytigo"
+msgstr "Solution de paiement Moneytigo pour WooCommerce"
 
-#: woocommerce-moneytigo.php:57
+#: woocommerce-moneytigo.php:89
 #, php-format
 msgid "The MoneyTigo module works from Woocommerce version %s minimum"
 msgstr ""
 "Le module MoneyTigo fonctionne à partir de la version Woocommerce %s minimum"
 
-#: woocommerce-moneytigo.php:93
+#: woocommerce-moneytigo.php:139
 msgid "Payment Gateways"
 msgstr "Passerelles de paiement"
 
-#: woocommerce-moneytigo.php:108 woocommerce-moneytigo.php:114
+#: woocommerce-moneytigo.php:154 woocommerce-moneytigo.php:162
+#: woocommerce-moneytigo.php:171 woocommerce-moneytigo.php:180
 msgid "Module not configured, API key or ENCRYPTION key missing"
 msgstr "Module non configuré, clé API ou clé DE CRYPTAGE manquante"
 
@@ -240,7 +289,7 @@ msgstr "https://app.moneytigo.com"
 
 #. Description of the plugin/theme
 msgid "Accept credit cards in less than 5 minutes"
-msgstr "Acceptez les cartes en moins de 5 minutes"
+msgstr "Acceptez les cartes bancaire en moins de 5 minutes"
 
 #. Author of the plugin/theme
 msgid "IPS INTERNATIONNAL SAS"
