@@ -7,9 +7,9 @@ class WC_MoneyTigoPnfFour extends WC_Payment_Gateway {
    */
   public function __construct() {
     global $woocommerce;
-    $this->version = moneytigo_universale_params()['Version'];
+    $this->version = moneytigo_universale_params()[ 'Version' ];
     $this->id = 'moneytigopnffour';
-    $this->icon = moneytigo_get_file("assets/img/carte.png");
+    $this->icon = moneytigo_get_file( "assets/img/carte.png" );
     $this->init_form_fields();
 
     // Load the settings.
@@ -170,4 +170,3 @@ public function process_payment( $order_id ) {
 
 }
 ?>
-

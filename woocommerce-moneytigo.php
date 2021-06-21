@@ -190,7 +190,7 @@ function moneytigo_payment_method_filters( $gateways ) {
 
       $IPSPnf = $gateways[ 'moneytigopnftwo' ]->{'settings'};
 
-      if ( isset($woocommerce->cart->total) && $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
+      if ( isset( $woocommerce->cart->total ) && $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
         unset( $gateways[ 'moneytigopnftwo' ] );
       }
     }
@@ -202,7 +202,7 @@ function moneytigo_payment_method_filters( $gateways ) {
 
       $IPSPnf = $gateways[ 'moneytigopnfthree' ]->{'settings'};
 
-      if ( isset($woocommerce->cart->total) && $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
+      if ( isset( $woocommerce->cart->total ) && $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
         unset( $gateways[ 'moneytigopnfthree' ] );
       }
     }
@@ -214,7 +214,7 @@ function moneytigo_payment_method_filters( $gateways ) {
 
       $IPSPnf = $gateways[ 'moneytigopnffour' ]->{'settings'};
 
-      if ( isset($woocommerce->cart->total) && $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
+      if ( isset( $woocommerce->cart->total ) && $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
         unset( $gateways[ 'moneytigopnffour' ] );
       }
     }
