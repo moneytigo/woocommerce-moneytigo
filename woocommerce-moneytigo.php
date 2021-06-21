@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', 'moneytigo_load_plugin_css' );
 /* Function for universal calling in the payment sub-modules */
 function moneytigo_universale_params() {
 
-  $baseUriMoneyTigoWEB = "https://test.moneytigo.com";
+  $baseUriMoneyTigoWEB = "https://checkout.moneytigo.com";
   $baseUriMoneyTigoAPI = "https://payment.moneytigo.com";
 
   $config = array(
