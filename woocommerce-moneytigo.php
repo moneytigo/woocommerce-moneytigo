@@ -25,7 +25,6 @@ function moneytigo_get_file( $namefiles = "" ) {
 /* Add styles Css */
 function moneytigo_load_plugin_css() {
   $plugin_url = plugin_dir_url( __FILE__ );
-  print_r( $plugin_url );
   wp_enqueue_style( 'moneytigo', $plugin_url . 'assets/css/styles.css' );
 
 }
@@ -191,7 +190,7 @@ function moneytigo_payment_method_filters( $gateways ) {
 
       $IPSPnf = $gateways[ 'moneytigopnftwo' ]->{'settings'};
 
-      if ( $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
+      if ( isset($woocommerce->cart->total) && $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
         unset( $gateways[ 'moneytigopnftwo' ] );
       }
     }
@@ -203,7 +202,7 @@ function moneytigo_payment_method_filters( $gateways ) {
 
       $IPSPnf = $gateways[ 'moneytigopnfthree' ]->{'settings'};
 
-      if ( $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
+      if ( isset($woocommerce->cart->total) && $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
         unset( $gateways[ 'moneytigopnfthree' ] );
       }
     }
@@ -215,7 +214,7 @@ function moneytigo_payment_method_filters( $gateways ) {
 
       $IPSPnf = $gateways[ 'moneytigopnffour' ]->{'settings'};
 
-      if ( $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
+      if ( isset($woocommerce->cart->total) && $woocommerce->cart->total < $IPSPnf[ 'seuil' ] ) {
         unset( $gateways[ 'moneytigopnffour' ] );
       }
     }
