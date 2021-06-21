@@ -7,14 +7,14 @@ class WC_MoneyTigo extends WC_Payment_Gateway {
    */
   public function __construct() {
     global $woocommerce;
-    $this->version = moneytigo_universale_params()[ 'Version' ];
+    $this->version = moneytigo_universale_params()['Version'];
     $this->id = 'moneytigo';
-
-    $this->icon = moneytigo_get_file( "assets/img/carte.png" );
+	  
+    $this->icon = moneytigo_get_file("assets/img/carte.png");
 
     $this->init_form_fields();
 
-
+	 
     // Load the settings.
     $this->init_settings();
     $this->has_fields = false;
@@ -158,7 +158,7 @@ public function moneytigo_notification() {
 
 public function moneytigo_return() {
   global $woocommerce;
-
+	
   /*Default Url*/
   $returnUri = wc_get_checkout_url();
   /*Securing*/
@@ -174,7 +174,7 @@ public function moneytigo_return() {
   };
 
   /*Check if the payment method is MoneyTigo for this order */
-  if ( $WcOrder->get_payment_method() !== "moneytigo" && $WcOrder->get_payment_method() !== "moneytigopnftwo" & $WcOrder->get_payment_method() !== "moneytigopnfthree" && $WcOrder->get_payment_method() !== "moneytigopnffour" ) {
+  if ( $WcOrder->get_payment_method() !== "moneytigo" && $WcOrder->get_payment_method() !== "moneytigopnftwo" & $WcOrder->get_payment_method() !== "moneytigopnfthree" && $WcOrder->get_payment_method() !== "moneytigopnffour"  ) {
     return;
   }
 
