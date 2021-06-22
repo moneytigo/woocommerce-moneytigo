@@ -39,7 +39,7 @@ function moneytigo_universale_params() {
     'Version' => "1.0.6",
     'ApiInitPayment' => $baseUriMoneyTigoAPI . "/init_transactions/",
     'ApiGetTransaction' => $baseUriMoneyTigoAPI . "/transactions/",
-	'CheckCmsUri' => 'https://app.moneytigo.com/checkcms/?cname=wordpress_woocommerce&v=' . get_plugin_data( __FILE__ )[ 'Version' ] . '',
+    'CheckCmsUri' => 'https://app.moneytigo.com/checkcms/?cname=wordpress_woocommerce&v=' . get_plugin_data( __FILE__ )[ 'Version' ] . '',
     'ApiGetTransactionByOrderId' => "https://payment.moneytigo.com/transactions_by_merchantid/",
     'WebUriStandard' => $baseUriMoneyTigoWEB . "/pay/standard/token/",
     'WebUriInstallment' => $baseUriMoneyTigoWEB . "/pay/installment/token/",
@@ -50,8 +50,8 @@ function moneytigo_universale_params() {
 }
 
 function checking_mtg_upgrade() {
-  $response = wp_remote_get( moneytigo_universale_params()[ 'CheckCmsUri' ]);
-  if ( $response['body'] == true ) {
+  $response = wp_remote_get( moneytigo_universale_params()[ 'CheckCmsUri' ] );
+  if ( $response[ 'body' ] == true ) {
     echo '
     <div class="notice notice-warning" style="background-color: red; color: white">
         <p>MONEYTIGO : ' . __( 'We inform you that a new version of the plugin is available, You must perform the update within the next 48 working hours', 'moneytigo' ) . ' ! </p>

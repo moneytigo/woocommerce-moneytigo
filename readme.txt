@@ -4,7 +4,7 @@ Tags: payment,payments, checkout,payment pro,merchant account,contrat vad,moyen 
 Requires at least: 4.1
 Tested up to: 5.7
 Requires PHP: 7.0
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,11 @@ C'est terminé !
 It's finish!
 
 == Changelog ==
+= 1.0.6 =
+* Add spanish translate
+* Update french translate
+* Fix domain text
+* Fix checking moneytigo
 
 = 1.0.5 =
 * Added 2 and 4 times payment methods
