@@ -19,13 +19,13 @@ class WC_MoneyTigo extends WC_Payment_Gateway {
     $this->init_settings();
     $this->has_fields = false;
 
-    $this->method_title = __( 'MoneyTigo', 'moneytigo_woocommerce' );
+    $this->method_title = __( 'MoneyTigo', 'moneytigo' );
 
 
     // Define user set variables.
     $this->title = $this->settings[ 'title' ];
     $this->instructions = $this->get_option( 'instructions' );
-    $this->method_description = __( 'Accept credit cards in less than 5 minutes. <a href="https://app.moneytigo.com/user/register">Open an account now !</a>', 'moneytigo_woocommerce' );
+    $this->method_description = __( 'Accept credit cards in less than 5 minutes. <a href="https://app.moneytigo.com/user/register">Open an account now !</a>', 'moneytigo' );
     $this->moneytigo_gateway_api_key = $this->settings[ 'moneytigo_gateway_api_key' ];
     $this->moneytigo_gateway_secret_key = $this->settings[ 'moneytigo_gateway_secret_key' ];
 
@@ -46,16 +46,16 @@ class WC_MoneyTigo extends WC_Payment_Gateway {
   public function admin_options() {
     ?>
 <h3>
-  <?php _e('MoneyTigo configuration', 'moneytigo_woocommerce'); ?>
+  <?php _e('MoneyTigo configuration', 'moneytigo'); ?>
 </h3>
 <div class="simplify-commerce-banner updated"> <img src="<?php echo moneytigo_get_file("assets/img/moneytigo.png"); ?>" />
-  <p class="main"><strong><?php echo __('Accepts payments by credit card with MoneyTigo', 'moneytigo_woocommerce'); ?></strong></p>
-  <p><?php echo __('MoneyTigo is a secure payment solution on the Internet. As a virtual POS (Electronic Payment Terminal), MoneyTigo makes it possible to cash payments made on the Internet 24 hours a day, 7 days a week. This service relieves your site of the entire payment phase; the latter takes place directly on our secure payment platform.', 'moneytigo_woocommerce'); ?></p>
-  <p><?php echo __('For any problem or information contact: hello@moneytigo.com', 'moneytigo_woocommerce'); ?></p>
-  <p><a href="https://www.moneytigo.com" target="_blank" class="button button-primary"><?php echo __('Get a MoneyTigo account', 'moneytigo_woocommerce'); ?></a> <a href="https://app.moneytigo.com/user/register" target="_blank" class="button"><?php echo __('Test free', 'moneytigo_woocommerce'); ?></a> <a href="https://www.moneytigo.com" target="_blank" class="button"><?php echo __('Official site', 'moneytigo_woocommerce'); ?></a> <a href="https://www.moneytigo.com" target="_blank" class="button"><?php echo __('Documentation', 'moneytigo_woocommerce'); ?></a></p>
+  <p class="main"><strong><?php echo __('Accepts payments by credit card with MoneyTigo', 'moneytigo'); ?></strong></p>
+  <p><?php echo __('MoneyTigo is a secure payment solution on the Internet. As a virtual POS (Electronic Payment Terminal), MoneyTigo makes it possible to cash payments made on the Internet 24 hours a day, 7 days a week. This service relieves your site of the entire payment phase; the latter takes place directly on our secure payment platform.', 'moneytigo'); ?></p>
+  <p><?php echo __('For any problem or information contact: hello@moneytigo.com', 'moneytigo'); ?></p>
+  <p><a href="https://www.moneytigo.com" target="_blank" class="button button-primary"><?php echo __('Get a MoneyTigo account', 'moneytigo'); ?></a> <a href="https://app.moneytigo.com/user/register" target="_blank" class="button"><?php echo __('Test free', 'moneytigo'); ?></a> <a href="https://www.moneytigo.com" target="_blank" class="button"><?php echo __('Official site', 'moneytigo'); ?></a> <a href="https://www.moneytigo.com" target="_blank" class="button"><?php echo __('Documentation', 'moneytigo'); ?></a></p>
 </div>
 <div class="simplify-commerce-banner error">
-  <p class="main" style="color:red;"><strong> <?php echo __('If you want your customer to be automatically redirected to your site once the payment is accepted or failed, consider activating this option directly in the configuration of your website in your MoneyTigo DashBoard', 'moneytigo_woocommerce'); ?> </strong></p>
+  <p class="main" style="color:red;"><strong> <?php echo __('If you want your customer to be automatically redirected to your site once the payment is accepted or failed, consider activating this option directly in the configuration of your website in your MoneyTigo DashBoard', 'moneytigo'); ?> </strong></p>
 </div>
 <table class="form-table">
   <?php $this->generate_settings_html(); ?>
@@ -140,7 +140,7 @@ public function moneytigo_notification() {
     exit();
   } else {
     /* Payment declined or cancelled */
-    $order->update_status( 'failed', __( 'MoneyTigo - Transaction ' . $TransactionId . ' - FAILED (' . $result[ 'Transaction_Status' ][ 'Bank_Code_Description' ] . ')', 'moneytigo_woocommerce' ) );
+    $order->update_status( 'failed', __( 'MoneyTigo - Transaction ' . $TransactionId . ' - FAILED (' . $result[ 'Transaction_Status' ][ 'Bank_Code_Description' ] . ')', 'moneytigo' ) );
     echo 'Order ' . esc_attr( $result[ 'Merchant_Order_Id' ] ) . ' was successfully cancelled !';
     exit();
   }
@@ -192,7 +192,7 @@ public function moneytigo_return() {
     /* If an error code is returned then we redirect the client indicating the problem */
     if ( isset( $checkTransaction[ 'ErrorCode' ] ) ) {
       error_log( 'MONEYTIGO API Error @moneytigo_return : ' . $checkTransaction[ 'ErrorCode' ] . ' : ' . $checkTransaction[ 'ErrorDescription' ] . '' );
-      wc_add_notice( __( 'An internal error occurred', 'moneytigo_woocommerce' ), 'error' );
+      wc_add_notice( __( 'An internal error occurred', 'moneytigo' ), 'error' );
     }
 
     /* All is ok so we finish the final process */
@@ -214,14 +214,14 @@ public function moneytigo_return() {
         /* The transaction is still pending */
         /* A message is displayed to the customer asking him to be patient */
         /* We make it wait 10 seconds then we refresh the page */
-        echo __( 'Please wait a few moments ...', 'moneytigo_woocommerce' );
+        echo __( 'Please wait a few moments ...', 'moneytigo' );
         header( "Refresh:10" );
         exit();
       } else {
         /* La transaction est annulé ou refusé */
         /* The customer is redirected to the shopping cart page with the rejection message */
         /* Redirect the customer to the shopping cart and indicate that the payment is declined */
-        wc_add_notice( __( 'Sorry, your payment was declined !', 'moneytigo_woocommerce' ), 'error' );
+        wc_add_notice( __( 'Sorry, your payment was declined !', 'moneytigo' ), 'error' );
       }
     }
 
@@ -234,7 +234,7 @@ public function moneytigo_return() {
       $returnUri = $this->get_return_url( $WcOrder );
     } else {
       /* Redirect the customer to the shopping cart and indicate that the payment is declined */
-      wc_add_notice( __( 'Sorry, your payment was declined !', 'moneytigo_woocommerce' ), 'error' );
+      wc_add_notice( __( 'Sorry, your payment was declined !', 'moneytigo' ), 'error' );
     }
 
   }
@@ -252,33 +252,33 @@ public function init_form_fields() {
 
   $this->form_fields = array(
     'enabled' => array(
-      'title' => __( 'Enable / Disable', 'moneytigo_woocommerce' ),
+      'title' => __( 'Enable / Disable', 'moneytigo' ),
       'type' => 'checkbox',
-      'label' => __( 'Activate card payment with MoneyTigo', 'moneytigo_woocommerce' ),
+      'label' => __( 'Activate card payment with MoneyTigo', 'moneytigo' ),
       'default' => 'no'
     ),
     'title' => array(
-      'title' => __( 'Method title', 'moneytigo_woocommerce' ),
+      'title' => __( 'Method title', 'moneytigo' ),
       'type' => 'text',
-      'description' => __( 'This is the name displayed on your checkout', 'moneytigo_woocommerce' ),
+      'description' => __( 'This is the name displayed on your checkout', 'moneytigo' ),
       'desc_tip' => true,
-      'default' => __( 'Credit card payment', 'moneytigo_woocommerce' )
+      'default' => __( 'Credit card payment', 'moneytigo' )
     ),
     'description' => array(
-      'title' => __( 'Message before payment', 'moneytigo_woocommerce' ),
+      'title' => __( 'Message before payment', 'moneytigo' ),
       'type' => 'textarea',
-      'description' => __( 'Message that the customer sees when he chooses this payment method', 'moneytigo_woocommerce' ),
+      'description' => __( 'Message that the customer sees when he chooses this payment method', 'moneytigo' ),
       'desc_tip' => true,
-      'default' => __( 'You will be redirected to our secure server to make your payment', 'moneytigo_woocommerce' )
+      'default' => __( 'You will be redirected to our secure server to make your payment', 'moneytigo' )
     ),
     'moneytigo_gateway_api_key' => array(
-      'title' => __( 'Your API Key', 'moneytigo_woocommerce' ),
-      'description' => __( 'To obtain it go to the configuration of your merchant contract (section "Merchant account").', 'moneytigo_woocommerce' ),
+      'title' => __( 'Your API Key', 'moneytigo' ),
+      'description' => __( 'To obtain it go to the configuration of your merchant contract (section "Merchant account").', 'moneytigo' ),
       'type' => 'text'
     ),
     'moneytigo_gateway_secret_key' => array(
-      'title' => __( 'Your Secret Key', 'moneytigo_woocommerce' ),
-      'description' => __( 'To obtain it go to the configuration of your merchant contract (section "Merchant account").', 'moneytigo_woocommerce' ),
+      'title' => __( 'Your Secret Key', 'moneytigo' ),
+      'description' => __( 'To obtain it go to the configuration of your merchant contract (section "Merchant account").', 'moneytigo' ),
       'type' => 'text'
     )
   );
@@ -351,10 +351,10 @@ public function process_payment( $order_id ) {
   if ( !is_wp_error( $getToken ) ) {
     $results = json_decode( $getToken[ 'body' ], true );
     if ( $getToken[ 'response' ][ 'code' ] === 200 ) {
-      wc_add_notice( __( 'MoneyTigo : ' . $results[ 'Error_Code' ] . ' - ' . $results[ 'Short_Description' ] . ' - ' . $results[ 'Full_Description' ] . '', 'moneytigo_woocommerce' ), 'error' );
+      wc_add_notice( __( 'MoneyTigo : ' . $results[ 'Error_Code' ] . ' - ' . $results[ 'Short_Description' ] . ' - ' . $results[ 'Full_Description' ] . '', 'moneytigo' ), 'error' );
       return;
     } else if ( $getToken[ 'response' ][ 'code' ] === 400 ) {
-      wc_add_notice( __( 'MoneyTigo : ' . $results[ 'ErrorCode' ] . ' - ' . $results[ 'ErrorDescription' ] . '', 'moneytigo_woocommerce' ), 'error' );
+      wc_add_notice( __( 'MoneyTigo : ' . $results[ 'ErrorCode' ] . ' - ' . $results[ 'ErrorDescription' ] . '', 'moneytigo' ), 'error' );
       return;
     } else if ( $getToken[ 'response' ][ 'code' ] === 201 ) {
       return array(

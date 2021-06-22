@@ -3,12 +3,12 @@
         Plugin Name: MoneyTigo
         Plugin URI: https://app.moneytigo.com
         Description: Accept credit cards in less than 5 minutes
-        Version: 1.0.5
+        Version: 1.0.6
         Author: IPS INTERNATIONNAL SAS
         Author URI: https://www.moneytigo.com
         License: IPS INTERNATIONNAL SAS
 		Domain Path: /languages
-		Text Domain: moneytigo_woocommerce
+		Text Domain: moneytigo
     */
 
 /* Additional links on the plugin page */
@@ -36,9 +36,10 @@ function moneytigo_universale_params() {
   $baseUriMoneyTigoAPI = "https://payment.moneytigo.com";
 
   $config = array(
-    'Version' => "1.0.5",
+    'Version' => "1.0.6",
     'ApiInitPayment' => $baseUriMoneyTigoAPI . "/init_transactions/",
     'ApiGetTransaction' => $baseUriMoneyTigoAPI . "/transactions/",
+	'CheckCmsUri' => 'https://app.moneytigo.com/checkcms/?cname=wordpress_woocommerce&v=' . get_plugin_data( __FILE__ )[ 'Version' ] . '',
     'ApiGetTransactionByOrderId' => "https://payment.moneytigo.com/transactions_by_merchantid/",
     'WebUriStandard' => $baseUriMoneyTigoWEB . "/pay/standard/token/",
     'WebUriInstallment' => $baseUriMoneyTigoWEB . "/pay/installment/token/",
@@ -49,16 +50,11 @@ function moneytigo_universale_params() {
 }
 
 function checking_mtg_upgrade() {
-  $ch = curl_init();
-  curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
-  curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-  curl_setopt( $ch, CURLOPT_URL, 'https://app.moneytigo.com/checkcms/?cname=wordpress_woocommerce&v=' . get_plugin_data( __FILE__ )[ 'Version' ] . '' );
-  $result = curl_exec( $ch );
-  curl_close( $ch );
-  if ( $result == true ) {
+  $response = wp_remote_get( moneytigo_universale_params()[ 'CheckCmsUri' ]);
+  if ( $response['body'] == true ) {
     echo '
     <div class="notice notice-warning" style="background-color: red; color: white">
-        <p>MONEYTIGO : ' . __( 'We inform you that a new version of the plugin is available, You must perform the update within the next 48 working hours', 'moneytigo_woocommerce' ) . ' ! </p>
+        <p>MONEYTIGO : ' . __( 'We inform you that a new version of the plugin is available, You must perform the update within the next 48 working hours', 'moneytigo' ) . ' ! </p>
 		
     </div>
     ';
@@ -69,7 +65,7 @@ function checking_mtg_upgrade() {
 function moneytigo_register_plugin_links( $links, $file ) {
   $base = plugin_basename( __FILE__ );
   if ( $file == $base ) {
-    $links[] = '<a href="https://app.moneytigo.com/account/plugins/documentation" target="_blank">' . __( 'Documentation', 'moneytigo_woocommerce' ) . '</a>';
+    $links[] = '<a href="https://app.moneytigo.com/account/plugins/documentation" target="_blank">' . __( 'Documentation', 'moneytigo' ) . '</a>';
   }
   return $links;
 }
@@ -77,7 +73,7 @@ function moneytigo_register_plugin_links( $links, $file ) {
 /* Add footer display Payment securised */
 
 function moneytigo_in_footer() {
-  echo '<div id="logomoneytigo" name="logomoneytigo" class="mtgfooter" style="position:relative; bottom: 1px;"><hr><center><a href="https://www.moneytigo.com/?referrer=plugins&desc=woocommerce"><img src="' . plugin_dir_url( __FILE__ ) . 'assets/img/footer_moneytigo_logo.png" style="margin-bottom: 5px; width: 150px !important;" alt="' . __( 'Payment solution for WooCommerce Moneytigo', 'moneytigo_woocommerce' ) . '" title="' . __( 'Payment solution for WooCommerce Moneytigo', 'moneytigo_woocommerce' ) . '"></a></center></div>';
+  echo '<div id="logomoneytigo" name="logomoneytigo" class="mtgfooter" style="position:relative; bottom: 1px;"><hr><center><a href="https://www.moneytigo.com/?referrer=plugins&desc=woocommerce"><img src="' . plugin_dir_url( __FILE__ ) . 'assets/img/footer_moneytigo_logo.png" style="margin-bottom: 5px; width: 150px !important;" alt="' . __( 'Payment solution for WooCommerce Moneytigo', 'moneytigo' ) . '" title="' . __( 'Payment solution for WooCommerce Moneytigo', 'moneytigo' ) . '"></a></center></div>';
 }
 add_action( 'wp_footer', 'moneytigo_in_footer' );
 
@@ -85,7 +81,7 @@ add_action( 'wp_footer', 'moneytigo_in_footer' );
 /* WooCommerce fallback notice. */
 function moneytigo_ipg_fallback_notice() {
   $htmlToReturn = '<div class="error">';
-  $htmlToReturn .= '<p>' . sprintf( __( 'The MoneyTigo module works from Woocommerce version %s minimum', 'moneytigo_woocommerce' ), '<a href="http://wordpress.org/extend/plugins/woocommerce/">WooCommerce</a>' ) . '</p>';
+  $htmlToReturn .= '<p>' . sprintf( __( 'The MoneyTigo module works from Woocommerce version %s minimum', 'moneytigo' ), '<a href="http://wordpress.org/extend/plugins/woocommerce/">WooCommerce</a>' ) . '</p>';
   $htmlToReturn .= '</div>';
   echo $htmlToReturn;
 }
@@ -150,7 +146,7 @@ function moneytigo_payment_method_filters( $gateways ) {
   if ( isset( $gateways[ 'moneytigo' ] ) ) {
     if ( $gateways[ 'moneytigo' ]->{'enabled'} == "yes" ) {
       if ( ( !$gateways[ 'moneytigo' ]->{'moneytigo_gateway_api_key'} || $gateways[ 'moneytigo' ]->{'moneytigo_gateway_api_key'} == ' ' ) || ( !$gateways[ 'moneytigo' ]->{'moneytigo_gateway_secret_key'} || $gateways[ 'moneytigo' ]->{'moneytigo_gateway_secret_key'} == ' ' ) ) {
-        wc_add_notice( '<b>MoneyTigo</b> : ' . __( 'Module not configured, API key or ENCRYPTION key missing', 'moneytigo_woocommerce' ) . '', 'error' );
+        wc_add_notice( '<b>MoneyTigo</b> : ' . __( 'Module not configured, API key or ENCRYPTION key missing', 'moneytigo' ) . '', 'error' );
         unset( $gateways[ 'moneytigo' ] ); //Not avialable cause not settings
       }
     }
@@ -158,7 +154,7 @@ function moneytigo_payment_method_filters( $gateways ) {
   if ( isset( $gateways[ 'moneytigopnftwo' ] ) ) {
     if ( $gateways[ 'moneytigopnftwo' ]->{'enabled'} == "yes" ) {
       if ( ( !$gateways[ 'moneytigo' ]->{'moneytigo_gateway_api_key'} || $gateways[ 'moneytigo' ]->{'moneytigo_gateway_api_key'} == ' ' ) || ( !$gateways[ 'moneytigo' ]->{'moneytigo_gateway_secret_key'} || $gateways[ 'moneytigo' ]->{'moneytigo_gateway_secret_key'} == ' ' ) ) {
-        wc_add_notice( '<b>MoneyTigo (2X)</b> : ' . __( 'Module not configured, API key or ENCRYPTION key missing', 'moneytigo_woocommerce' ) . '', 'error' );
+        wc_add_notice( '<b>MoneyTigo (2X)</b> : ' . __( 'Module not configured, API key or ENCRYPTION key missing', 'moneytigo' ) . '', 'error' );
         unset( $gateways[ 'moneytigopnftwo' ] ); //Not avialable cause not settings
       }
     }
@@ -167,7 +163,7 @@ function moneytigo_payment_method_filters( $gateways ) {
   if ( isset( $gateways[ 'moneytigopnfthree' ] ) ) {
     if ( $gateways[ 'moneytigopnfthree' ]->{'enabled'} == "yes" ) {
       if ( ( !$gateways[ 'moneytigo' ]->{'moneytigo_gateway_api_key'} || $gateways[ 'moneytigo' ]->{'moneytigo_gateway_api_key'} == ' ' ) || ( !$gateways[ 'moneytigo' ]->{'moneytigo_gateway_secret_key'} || $gateways[ 'moneytigo' ]->{'moneytigo_gateway_secret_key'} == ' ' ) ) {
-        wc_add_notice( '<b>MoneyTigo (3X)</b> : ' . __( 'Module not configured, API key or ENCRYPTION key missing', 'moneytigo_woocommerce' ) . '', 'error' );
+        wc_add_notice( '<b>MoneyTigo (3X)</b> : ' . __( 'Module not configured, API key or ENCRYPTION key missing', 'moneytigo' ) . '', 'error' );
         unset( $gateways[ wc_CustomMoneyTigoPnfThree_add_gateway() ] ); //Not avialable cause not settings
       }
     }
@@ -176,7 +172,7 @@ function moneytigo_payment_method_filters( $gateways ) {
   if ( isset( $gateways[ 'moneytigopnffour' ] ) ) {
     if ( $gateways[ 'moneytigopnffour' ]->{'enabled'} == "yes" ) {
       if ( ( !$gateways[ 'moneytigo' ]->{'moneytigo_gateway_api_key'} || $gateways[ 'moneytigo' ]->{'moneytigo_gateway_api_key'} == ' ' ) || ( !$gateways[ 'moneytigo' ]->{'moneytigo_gateway_secret_key'} || $gateways[ 'moneytigo' ]->{'moneytigo_gateway_secret_key'} == ' ' ) ) {
-        wc_add_notice( '<b>MoneyTigo (4X)</b> : ' . __( 'Module not configured, API key or ENCRYPTION key missing', 'moneytigo_woocommerce' ) . '', 'error' );
+        wc_add_notice( '<b>MoneyTigo (4X)</b> : ' . __( 'Module not configured, API key or ENCRYPTION key missing', 'moneytigo' ) . '', 'error' );
         unset( $gateways[ wc_CustomMoneyTigoPnfThree_add_gateway() ] ); //Not avialable cause not settings
       }
     }
@@ -224,4 +220,4 @@ function moneytigo_payment_method_filters( $gateways ) {
 }
 
 /* Adding translation files */
-load_plugin_textdomain( 'moneytigo_woocommerce', false, dirname( plugin_basename( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'languages' . DIRECTORY_SEPARATOR );
+load_plugin_textdomain( 'moneytigo', false, dirname( plugin_basename( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'languages' . DIRECTORY_SEPARATOR );

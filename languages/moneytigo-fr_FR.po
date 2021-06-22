@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MoneyTigo\n"
-"POT-Creation-Date: 2021-06-21 12:09+0200\n"
-"PO-Revision-Date: 2021-06-21 12:14+0200\n"
+"POT-Creation-Date: 2021-06-22 09:23+0200\n"
+"PO-Revision-Date: 2021-06-22 09:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -79,7 +79,7 @@ msgstr "Site officiel"
 
 #: class-wc-moneytigo.php:55 class-wc-moneytigopnf-four.php:47
 #: class-wc-moneytigopnf-three.php:47 class-wc-moneytigopnf-two.php:47
-#: woocommerce-moneytigo.php:73
+#: woocommerce-moneytigo.php:68
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -256,7 +256,7 @@ msgstr "Activer le paiement en deux fois"
 msgid "Credit card in two instalments"
 msgstr "Carte bancaire en deux fois"
 
-#: woocommerce-moneytigo.php:62
+#: woocommerce-moneytigo.php:57
 msgid ""
 "We inform you that a new version of the plugin is available, You must "
 "perform the update within the next 48 working hours"
@@ -264,22 +264,22 @@ msgstr ""
 "Nous vous informons qu’une nouvelle version du plugin est disponible, Vous "
 "devez effectuer la mise à jour dans les prochaines 48 heures ouvrables"
 
-#: woocommerce-moneytigo.php:81
+#: woocommerce-moneytigo.php:76
 msgid "Payment solution for WooCommerce Moneytigo"
 msgstr "Solution de paiement Moneytigo pour WooCommerce"
 
-#: woocommerce-moneytigo.php:89
+#: woocommerce-moneytigo.php:84
 #, php-format
 msgid "The MoneyTigo module works from Woocommerce version %s minimum"
 msgstr ""
 "Le module MoneyTigo fonctionne à partir de la version Woocommerce %s minimum"
 
-#: woocommerce-moneytigo.php:139
+#: woocommerce-moneytigo.php:134
 msgid "Payment Gateways"
 msgstr "Passerelles de paiement"
 
-#: woocommerce-moneytigo.php:154 woocommerce-moneytigo.php:162
-#: woocommerce-moneytigo.php:171 woocommerce-moneytigo.php:180
+#: woocommerce-moneytigo.php:149 woocommerce-moneytigo.php:157
+#: woocommerce-moneytigo.php:166 woocommerce-moneytigo.php:175
 msgid "Module not configured, API key or ENCRYPTION key missing"
 msgstr "Module non configuré, clé API ou clé DE CRYPTAGE manquante"
 
