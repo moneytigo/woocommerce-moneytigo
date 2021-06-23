@@ -3,14 +3,18 @@
         Plugin Name: MoneyTigo
         Plugin URI: https://app.moneytigo.com
         Description: Accept credit cards in less than 5 minutes
-        Version: 1.0.6
+        Version: 1.0.7
         Author: IPS INTERNATIONNAL SAS
         Author URI: https://www.moneytigo.com
         License: IPS INTERNATIONNAL SAS
 		Domain Path: /languages
 		Text Domain: moneytigo
     */
-
+if ( is_admin() ) {
+  define( 'MoneyTigoVersion', get_plugin_data( __FILE__ )[ 'Version' ] );
+} else {
+  define( 'MoneyTigoVersion', "1.0.7" );
+}
 /* Additional links on the plugin page */
 add_filter( 'plugin_row_meta', 'moneytigo_register_plugin_links', 10, 2 );
 
@@ -31,7 +35,6 @@ function moneytigo_load_plugin_css() {
 add_action( 'wp_enqueue_scripts', 'moneytigo_load_plugin_css' );
 /* Function for universal calling in the payment sub-modules */
 function moneytigo_universale_params() {
-
   $baseUriMoneyTigoWEB = "https://checkout.moneytigo.com";
   $baseUriMoneyTigoAPI = "https://payment.moneytigo.com";
 
@@ -39,7 +42,7 @@ function moneytigo_universale_params() {
     'Version' => "1.0.6",
     'ApiInitPayment' => $baseUriMoneyTigoAPI . "/init_transactions/",
     'ApiGetTransaction' => $baseUriMoneyTigoAPI . "/transactions/",
-    'CheckCmsUri' => 'https://app.moneytigo.com/checkcms/?cname=wordpress_woocommerce&v=' . get_plugin_data( __FILE__ )[ 'Version' ] . '',
+    'CheckCmsUri' => 'https://app.moneytigo.com/checkcms/?cname=wordpress_woocommerce&v=' . MoneyTigoVersion . '',
     'ApiGetTransactionByOrderId' => "https://payment.moneytigo.com/transactions_by_merchantid/",
     'WebUriStandard' => $baseUriMoneyTigoWEB . "/pay/standard/token/",
     'WebUriInstallment' => $baseUriMoneyTigoWEB . "/pay/installment/token/",
