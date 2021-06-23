@@ -1,58 +1,61 @@
 === MoneyTigo pour WooCommerce ===
+Author: moneytigo.com
+Author URI: https://www.moneytigo.com/
 Contributors: moneytigo
 Tags: payment,payments, checkout,payment pro,merchant account,contrat vad,moyen de paiement,card,credit card,paiement,bezahlsystem,purchase,online payment,ipspayment,ips payment,moneytigo
 Requires at least: 4.1
 Tested up to: 5.7
 Requires PHP: 7.0
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+WC Tested up to: 3.3
+WC requires at least: 2.6
 
-MoneyTigo payment gateway for WooCommerce.
+MoneyTigo.com is a credit card payment processing solution compatible with Wordpress Woocommerce.
 
 == Description ==
-= Introduction =
 
-Notre module MoneyTigo pour WooCommerce vous permet d'encaisser simplement les paiements CB sur votre site Wordpress.
-
- * MoneyTigo accepte les paiement en EURO uniquement (Visa, Cb, Maestro, Mastercard, Amex, Jcb)
- * MoneyTigo accepte tous les vendeurs européens
- * MoneyTigo propose des taux bas pour des paiement sécurisés sur votre site E-commerce
- * Ouverture de compte instantannée 
-
- ------------------------------------------------------
-
-MoneyTigo payment solution for your Wordpress WooCommerce website:
-
- * MoneyTigo accepts payment in EURO only (Visa, Cb, Maestro, Mastercard, Amex, Jcb)
- * MoneyTigo accepts all European sellers
- * MoneyTigo offers low rates for secure payments on your E-commerce site
- * Instant account opening
-
+With MoneyTigo you can easily accept credit card payments on your Worpress Woocommerce store, MoneyTigo is a payment processor.
 
 == Installation ==
-== Installation ==
 
-1. Installez le module MoneyTigo si vous ne l'avez pas déjà fait et activez-le sur votre site Wordpress.
-2. Activez et configurez ensuite notre module dans vos réglages WooCommerce.
-3. Créez un compte sur https://www.moneytigo.com et rendez vous dans la partie Mes sites web dans laquelle vous pourrez ajouter votre boutique.
-4. Copiez-collez la clé API que vous trouverez dans votre backoffice MoneyTigo dans la section mes sites Web, que vous devez ajouter à la configuration de votre module MoneyTigo pour WooCommerce.
-5. Copiez-collez la clé de Cryptage (SecretKey) que vous trouverez dans votre backoffice MoneyTigo dans la section mes sites Web, que vous devez ajouter à la configuration de votre module MoneyTigo pour WooCommerce.
-6. Dans la configuration de votre site Web dans votre backoffice MoneyTigo, ajoutez l'adresse IP qui héberge votre site Web afin d'autoriser l'échange d'informations pour les notifications de transaction..
-C'est terminé ! 
+These steps should be made for module's correct work:
+
+1. Open a moneytigo.com account (Registration is done online and the account is opened immediately).
+2. Add your website to moneytigo.com (from your dashboard to get your API key credentials)
+2. Install and adjust the module
+
+[Important] - next steps presume you already have WooCommerce module installed on your website:
+
+1. Module's installation. Choose "Plugins -> Add new" in admin's console, press "Upload Plugin" button, choose zip-archive with plugin and then press "Install".
+2. Adjustment. Choose "WooCommerce -> Settings" in admin's console and proceed to "Payments" tab. Choose "MoneyTigo" in payment gateways list and proceed to settings.
+Fill in "Api Key" and "Secret Key" - these values can be found in https://app.moneytigo.com. You can leave the rest settings as they go.
+3. After saving your settings, you will have MoneyTigo payments available on your website.
 
 
-------------------------------------------------------
+== Frequently Asked Questions ==
 
-1. Install the MoneyTigo module if you haven't already done so and activate it on your Wordpress site
-2. Activate and then configure our module in your WooCommerce settings.
-3. Create an account on https://www.moneytigo.com and go to the My websites section where you can add your store.
-4. Copy-paste the API key that you will find in your MoneyTigo backoffice in the my websites section, which you need to add to your MoneyTigo module configuration for WooCommerce.
-5. Copy-paste the Encryption key (SecretKey) that you will find in your MoneyTigo backoffice in the my websites section, which you must add to the configuration of your MoneyTigo module for WooCommerce.
-6. In the configuration of your website in your MoneyTigo backoffice, add the IP address that hosts your website in order to authorize the exchange of information for transaction notifications.
-It's finish!
+= What does the plugin do? =
+
+Le plugin MoneyTigo ajoute à votre boutique Woocommerce et à Wordpress l'interfacage de votre compte de paiement MoneyTigo directement sur votre boutique sans dévellopement particulier.
+
+= What is MoneyTigo? =
+
+<a href="https://www.moneytigo.com/?utm_source=wordpress-plugin-listing&utm_campaign=wordpress&utm_medium=marketplaces" target="_blank">MoneyTigo</a> is an online payment gateway that allows you to accept credit cards in a matter of moments.
+
+== Upgrade notice ==
+
+Please note that the MoneyTigo plugin requires a minimum PHP version of 7.1
+
+== Screenshots ==
+
+1. A unique payment experience
 
 == Changelog ==
+= 1.0.7 =
+* Fix bug in list payment method
+
 = 1.0.6 =
 * Add spanish translate
 * Update french translate
