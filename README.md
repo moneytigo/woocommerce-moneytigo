@@ -3,14 +3,28 @@
 This payment module allows you to accept credit card payments through MoneyTigo.com payment solution (https://www.moneytigo.com).
 This version is compatible with the latest version of Wordpress / Woocommerce
 
-Module version: 1.0.6
+* Module version: 1.0.8
+* WordPress Plugin link : https://wordpress.org/plugins/moneytigo/
 
 ### INSTALLATION ###
 
-Note: The plugin is being approved by Wordpress, for the moment only the manual installation is available! 
+To install MoneyTigo plugin we invite you first : 
 
-To install this module you can either download the archive to benefit from the latest updates that may be unstable or use the search engine extensions in Wordpress to have the latest version STABLE.
+* 1 - Remove all old manual installations performed
 
-### OLD INSTALLATION ###
+Then : 
 
-Before proceeding to install a new version of MoneyTigo, we ask you to first delete the old plugin by going to the plugin manager and click on deactivate and then the deleted button will appear.
+* 1 - Go to your Wordpress Dashboard
+* 2 - In the "Plugins" tab click on "Add New".
+* 3 - Type "moneytigo" in the search bar then validate
+* 4 - Install the Moneytigo module
+* 5 - If it is not activated, click on activated.
+
+
+### SETTINGS ###
+
+It is a plugin compatible with Woocommerce, so you can find the settings in the Woocommerce settings section Payment.
+
+
+### IMPORTANT ###
+We invite you to stop doing manual installation, and to use only the native WordPress installation system so that we can automatically publish updates
