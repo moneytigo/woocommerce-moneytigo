@@ -6,7 +6,7 @@ Tags: payment,payments, checkout,payment pro,merchant account,contrat vad,moyen 
 Requires at least: 4.1
 Tested up to: 5.7
 Requires PHP: 7.0
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC Tested up to: 3.3
@@ -53,6 +53,9 @@ Please note that the MoneyTigo plugin requires a minimum PHP version of 7.1
 1. A unique payment experience
 
 == Changelog ==
+= 1.0.8 =
+* Fix bug in list payment method
+
 = 1.0.7 =
 * Fix bug in list payment method
 
