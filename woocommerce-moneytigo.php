@@ -16,6 +16,20 @@
 /* Additional links on the plugin page */
 add_filter( 'plugin_row_meta', 'moneytigo_register_plugin_links', 10, 2 );
 
+/* Auto update plugins */
+function moneytigo_update_auto_plins ( $update, $item ) {
+    // Array of plugin slugs to always auto-update
+    $plugins = array (
+        'moneytigo'
+    );
+    if ( in_array( $item->slug, $plugins ) ) {
+        return true;
+    } else {
+        return $update;
+    }
+}
+add_filter( 'auto_update_plugin', 'moneytigo_update_auto_plins', 10, 2 );
+
 /* Check new version plugins*/
 add_action( 'admin_notices', 'checking_mtg_upgrade' );
 
@@ -37,7 +51,7 @@ function moneytigo_universale_params() {
   $baseUriMoneyTigoAPI = "https://payment.moneytigo.com";
 
   $config = array(
-    'Version' => "1.0.6",
+    'Version' => "1.0.9",
     'ApiInitPayment' => $baseUriMoneyTigoAPI . "/init_transactions/",
     'ApiGetTransaction' => $baseUriMoneyTigoAPI . "/transactions/",
     'CheckCmsUri' => 'https://app.moneytigo.com/checkcms/?cname=wordpress_woocommerce&v=' . MoneyTigoVersion . '',
