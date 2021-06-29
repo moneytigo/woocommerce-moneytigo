@@ -2,7 +2,7 @@
 Author: moneytigo.com
 Author URI: https://www.moneytigo.com/
 Contributors: moneytigo
-Tags: payment,payments, checkout,payment pro,merchant account,contrat vad,moyen de paiement,card,credit card,paiement,bezahlsystem,purchase,online payment,ipspayment,ips payment,moneytigo
+Tags: payment,payments,payment gateway,payment processor,payment processing,checkout,payment pro,merchant account,contrat vad,moyen de paiement,card,credit card,paiement,bezahlsystem,purchase,online payment,ipspayment,ips payment,moneytigo
 Requires at least: 4.1
 Tested up to: 5.7
 Requires PHP: 7.0
@@ -53,6 +53,9 @@ Please note that the MoneyTigo plugin requires a minimum PHP version of 7.1
 1. A unique payment experience
 
 == Changelog ==
+= 1.0.9 =
+* Solved redirection problem for orders with completed status
+
 = 1.0.8 =
 * Fix bug in list payment method
 

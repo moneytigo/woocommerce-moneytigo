@@ -3,7 +3,7 @@
         Plugin Name: MoneyTigo
         Plugin URI: https://app.moneytigo.com
         Description: Accept credit cards in less than 5 minutes
-        Version: 1.0.8
+        Version: 1.0.9
         Author: IPS INTERNATIONNAL SAS
         Author URI: https://www.moneytigo.com
         License: IPS INTERNATIONNAL SAS
@@ -11,7 +11,7 @@
 		Text Domain: moneytigo
     */
 
-  define( 'MoneyTigoVersion', "1.0.8" );
+  define( 'MoneyTigoVersion', "1.0.9" );
 
 /* Additional links on the plugin page */
 add_filter( 'plugin_row_meta', 'moneytigo_register_plugin_links', 10, 2 );

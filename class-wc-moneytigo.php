@@ -230,7 +230,8 @@ public function moneytigo_return() {
 
     /* The answer from moneytigo has already arrived (IPN) */
     /* Redirect the customer to the thank you page if the order is well paid */
-    if ( $WcOrder->get_status() === 'processing' ) {
+	/* Fixed also redirects the customer to the acceptance page if the order has a completed status, useful for self-delivered products */
+    if ( $WcOrder->get_status() === 'processing' || $WcOrder->get_status() === 'completed' ) {
       $returnUri = $this->get_return_url( $WcOrder );
     } else {
       /* Redirect the customer to the shopping cart and indicate that the payment is declined */
