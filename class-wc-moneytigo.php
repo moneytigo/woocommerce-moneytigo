@@ -128,8 +128,9 @@ public function moneytigo_notification() {
   if ( $result[ 'Transaction_Status' ][ 'State' ] == 2 ) {
     $order->payment_complete( $result[ 'Bank' ][ 'Internal_IPS_Id' ] );
     /* Reduction of the stock */
-    wc_reduce_stock_levels( $result[ 'Merchant_Order_Id' ] );
-
+    /* replace @wc_reduce_stock_levels by @wc_maybe_reduce_stock_levels to prevent duplicate deductions */
+    // wc_reduce_stock_levels( $result[ 'Merchant_Order_Id' ] );
+    wc_maybe_reduce_stock_levels( $result[ 'Merchant_Order_Id' ] );
 
     /* Add a note on the order to say that the order is confirmed */
     $order->add_order_note( 'Payment by MoneyTigo credit card accepted (IPN)', true );
@@ -230,12 +231,15 @@ public function moneytigo_return() {
 
     /* The answer from moneytigo has already arrived (IPN) */
     /* Redirect the customer to the thank you page if the order is well paid */
-	/* Fixed also redirects the customer to the acceptance page if the order has a completed status, useful for self-delivered products */
+    /* Fixed also redirects the customer to the acceptance page if the order has a completed status, useful for self-delivered products */
     if ( $WcOrder->get_status() === 'processing' || $WcOrder->get_status() === 'completed' ) {
       $returnUri = $this->get_return_url( $WcOrder );
     } else {
       /* Redirect the customer to the shopping cart and indicate that the payment is declined */
       wc_add_notice( __( 'Sorry, your payment was declined !', 'moneytigo' ), 'error' );
+      /* force create new order for new attempts */
+      WC()->session->set( 'order_awaiting_payment', false );
+
     }
 
   }

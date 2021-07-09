@@ -5,8 +5,8 @@ Contributors: moneytigo
 Tags: payment,payments,payment gateway,payment processor,payment processing,checkout,payment pro,merchant account,contrat vad,moyen de paiement,card,credit card,paiement,bezahlsystem,purchase,online payment,ipspayment,ips payment,moneytigo
 Requires at least: 4.1
 Tested up to: 5.7
-Requires PHP: 7.0
-Stable tag: 1.0.8
+Requires PHP: 7.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC Tested up to: 3.3
@@ -53,6 +53,15 @@ Please note that the MoneyTigo plugin requires a minimum PHP version of 7.1
 1. A unique payment experience
 
 == Changelog ==
+
+= 1.1.0 =
+* Correction of the version management bug
+* Modification in case of refused payment, forcing the creation of a new order at each payment attempt
+* Fixed bug with duplicate stock increment
+* Removal of the moneytigo footer
+* Update check native to wordpress abandon manual check
+* Switch to automatic update by default for the moneytigo module
+
 = 1.0.9 =
 * Solved redirection problem for orders with completed status
 

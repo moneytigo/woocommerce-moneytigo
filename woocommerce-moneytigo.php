@@ -3,7 +3,7 @@
         Plugin Name: MoneyTigo
         Plugin URI: https://app.moneytigo.com
         Description: Accept credit cards in less than 5 minutes
-        Version: 1.0.9
+        Version: 1.1.0
         Author: IPS INTERNATIONNAL SAS
         Author URI: https://www.moneytigo.com
         License: IPS INTERNATIONNAL SAS
@@ -11,27 +11,24 @@
 		Text Domain: moneytigo
     */
 
-  define( 'MoneyTigoVersion', "1.0.9" );
+define( 'MoneyTigoVersion', "1.1.0" );
 
 /* Additional links on the plugin page */
 add_filter( 'plugin_row_meta', 'moneytigo_register_plugin_links', 10, 2 );
 
 /* Auto update plugins */
-function moneytigo_update_auto_plins ( $update, $item ) {
-    // Array of plugin slugs to always auto-update
-    $plugins = array (
-        'moneytigo'
-    );
-    if ( in_array( $item->slug, $plugins ) ) {
-        return true;
-    } else {
-        return $update;
-    }
+function moneytigo_update_auto_plins( $update, $item ) {
+  // Array of plugin slugs to always auto-update
+  $plugins = array(
+    'moneytigo'
+  );
+  if ( in_array( $item->slug, $plugins ) ) {
+    return true;
+  } else {
+    return $update;
+  }
 }
 add_filter( 'auto_update_plugin', 'moneytigo_update_auto_plins', 10, 2 );
-
-/* Check new version plugins*/
-add_action( 'admin_notices', 'checking_mtg_upgrade' );
 
 /* Securing file calls by taking into account specific installations */
 function moneytigo_get_file( $namefiles = "" ) {
@@ -49,12 +46,10 @@ add_action( 'wp_enqueue_scripts', 'moneytigo_load_plugin_css' );
 function moneytigo_universale_params() {
   $baseUriMoneyTigoWEB = "https://checkout.moneytigo.com";
   $baseUriMoneyTigoAPI = "https://payment.moneytigo.com";
-
   $config = array(
-    'Version' => "1.0.9",
+    'Version' => "1.1.0",
     'ApiInitPayment' => $baseUriMoneyTigoAPI . "/init_transactions/",
     'ApiGetTransaction' => $baseUriMoneyTigoAPI . "/transactions/",
-    'CheckCmsUri' => 'https://app.moneytigo.com/checkcms/?cname=wordpress_woocommerce&v=' . MoneyTigoVersion . '',
     'ApiGetTransactionByOrderId' => "https://payment.moneytigo.com/transactions_by_merchantid/",
     'WebUriStandard' => $baseUriMoneyTigoWEB . "/pay/standard/token/",
     'WebUriInstallment' => $baseUriMoneyTigoWEB . "/pay/installment/token/",
@@ -64,19 +59,6 @@ function moneytigo_universale_params() {
   return $config;
 }
 
-function checking_mtg_upgrade() {
-  $response = wp_remote_get( moneytigo_universale_params()[ 'CheckCmsUri' ] );
-  if ( $response[ 'body' ] == true ) {
-    echo '
-    <div class="notice notice-warning" style="background-color: red; color: white">
-        <p>MONEYTIGO : ' . __( 'We inform you that a new version of the plugin is available, You must perform the update within the next 48 working hours', 'moneytigo' ) . ' ! </p>
-		
-    </div>
-    ';
-  }
-}
-
-
 function moneytigo_register_plugin_links( $links, $file ) {
   $base = plugin_basename( __FILE__ );
   if ( $file == $base ) {
@@ -84,14 +66,6 @@ function moneytigo_register_plugin_links( $links, $file ) {
   }
   return $links;
 }
-
-/* Add footer display Payment securised */
-
-function moneytigo_in_footer() {
-  echo '<div id="logomoneytigo" name="logomoneytigo" class="mtgfooter" style="position:relative; bottom: 1px;"><hr><center><a href="https://www.moneytigo.com/?referrer=plugins&desc=woocommerce"><img src="' . plugin_dir_url( __FILE__ ) . 'assets/img/footer_moneytigo_logo.png" style="margin-bottom: 5px; width: 150px !important;" alt="' . __( 'Payment solution for WooCommerce Moneytigo', 'moneytigo' ) . '" title="' . __( 'Payment solution for WooCommerce Moneytigo', 'moneytigo' ) . '"></a></center></div>';
-}
-add_action( 'wp_footer', 'moneytigo_in_footer' );
-
 
 /* WooCommerce fallback notice. */
 function moneytigo_ipg_fallback_notice() {
