@@ -4,12 +4,12 @@ Author URI: https://www.moneytigo.com/
 Contributors: moneytigo
 Tags: payment,payments,payment gateway,payment processor,payment processing,checkout,payment pro,merchant account,contrat vad,moyen de paiement,card,credit card,paiement,bezahlsystem,purchase,online payment,ipspayment,ips payment,moneytigo
 Requires at least: 4.1
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 7.1
 Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-WC Tested up to: 3.3
+WC Tested up to: 5.4
 WC requires at least: 2.6
 
 MoneyTigo.com is a credit card payment processing solution compatible with Wordpress Woocommerce.
@@ -53,6 +53,10 @@ Please note that the MoneyTigo plugin requires a minimum PHP version of 7.1
 1. A unique payment experience
 
 == Changelog ==
+
+= 1.1.1 =
+* Compatibility test with Wordpress 5.8 and validation
+* Compatibility test with the latest version of WOCOMMERCE 5.4 and validation
 
 = 1.1.0 =
 * Correction of the version management bug
