@@ -3,7 +3,7 @@
 This payment module allows you to accept credit card payments through MoneyTigo.com payment solution (https://www.moneytigo.com).
 This version is compatible with the latest version of Wordpress / Woocommerce
 
-* Module version: 1.1.0
+* Module version: 1.1.1
 * WordPress Plugin link : https://wordpress.org/plugins/moneytigo/
 
 ### INSTALLATION ###
