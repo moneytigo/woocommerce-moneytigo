@@ -347,7 +347,7 @@ public function process_payment( $order_id ) {
     'RefOrder' => $order_id,
     'Customer_Email' => $email,
     'Customer_FirstName' => $custo_firstname,
-    'Customer_LastName' => $custo_lastname,
+    'Customer_Name' => $custo_lastname,
     'urlOK' => get_site_url() . '/?wc-api=wc_moneytigo_return&mtg_ord=' . $order_id . '',
     'urlKO' => get_site_url() . '/?wc-api=wc_moneytigo_return&mtg_ord=' . $order_id . '',
     'urlIPN' => get_site_url() . '/?wc-api=wc_moneytigo',
