@@ -6,7 +6,7 @@ Tags: payment,payments,payment gateway,payment processor,payment processing,chec
 Requires at least: 4.1
 Tested up to: 5.8
 Requires PHP: 7.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC Tested up to: 5.4
@@ -57,6 +57,7 @@ Please note that the MoneyTigo plugin requires a minimum PHP version of 7.1
 = 1.1.1 =
 * Compatibility test with Wordpress 5.8 and validation
 * Compatibility test with the latest version of WOCOMMERCE 5.4 and validation
+* Fixed of MoneyTigo API call with rectification of payer's last name
 
 = 1.1.0 =
 * Correction of the version management bug
